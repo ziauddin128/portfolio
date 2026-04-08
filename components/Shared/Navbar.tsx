@@ -65,9 +65,9 @@ export default function Navbar() {
 
           <button
             onClick={() => setShowMenu(true)}
-            className="block md:hidden p-2 rounded border border-text-primary cursor-pointer"
+            className="block md:hidden cursor-pointer"
           >
-            <HiMiniBars3 className="w-6 h-6 " />
+            <HiMiniBars3 className="w-8 h-8" />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -108,9 +108,9 @@ export default function Navbar() {
         >
           <button
             onClick={() => setShowMenu(false)}
-            className="absolute top-3 right-3 p-1 rounded-full border cursor-pointer border-red-500"
+            className="absolute top-3 right-3 p-1 cursor-pointer"
           >
-            <IoCloseOutline className="w-6 h-6 text-red-500" />
+            <IoCloseOutline className="w-7 h-7 text-red-500" />
           </button>
 
           <ul className="flex flex-col items-center gap-10">
