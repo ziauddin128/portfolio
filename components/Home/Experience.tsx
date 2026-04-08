@@ -1,5 +1,6 @@
 import React from "react";
 import { fraunces } from "../Shared/Font";
+import MagicContainer from "../ui/magiccard";
 
 interface Experiences {
   company: string;
@@ -28,12 +29,22 @@ export default function Experience() {
       skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
     },
     {
-        company: "Freelance",
-        contract: "Self Employed · 2021 - Present",
-        position: "Full-stack web developer",
-        description: "Worked as a freelance full-stack developer delivering 70+ web applications for international clients using Laravel, React.js, Next.js, and Node.js. Handled end-to-end development including requirement analysis, API integration, UI development, and deployment. Focused on building scalable, performant, and user-friendly solutions with consistent client satisfaction.",
-        skill: ["PHP", "Laravel", "Next.js", "React", "Tailwind Css", "Bootstrap", "API", "Redux Toolkit"],
-      },
+      company: "Freelance",
+      contract: "Self Employed · 2021 - Present",
+      position: "Full-stack web developer",
+      description:
+        "Worked as a freelance full-stack developer delivering 70+ web applications for international clients using Laravel, React.js, Next.js, and Node.js. Handled end-to-end development including requirement analysis, API integration, UI development, and deployment. Focused on building scalable, performant, and user-friendly solutions with consistent client satisfaction.",
+      skill: [
+        "PHP",
+        "Laravel",
+        "Next.js",
+        "React",
+        "Tailwind Css",
+        "Bootstrap",
+        "API",
+        "Redux Toolkit",
+      ],
+    },
   ];
 
   return (
@@ -54,38 +65,40 @@ export default function Experience() {
 
         <div className="mt-10 space-y-4">
           {experiences.map((experience, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col gap-5 md:grid md:grid-cols-[25%_75%] p-5 md:p-8 bg-white rounded-xl border border-gray-200"
-            >
-              <div className="space-y-2">
-                <h1 className={`${fraunces.className} text-lg font-semibold`}>
-                  {experience.company}
-                </h1>
-                <h5 className="text-sm text-secondary font-medium">
-                  {experience.contract}
-                </h5>
-              </div>
-              <div className="space-y-4">
-                <h1 className="text-base font-semibold">
-                  {experience.position}
-                </h1>
-                <p className="text-sm text-secondary">
-                  {experience.description}
-                </p>
+            <MagicContainer className="rounded-xl">
+              <div
+                key={idx}
+                className="flex flex-col gap-5 md:grid md:grid-cols-[25%_75%] p-5 md:p-8 bg-white rounded-xl border border-gray-200"
+              >
+                <div className="space-y-2">
+                  <h1 className={`${fraunces.className} text-lg font-semibold`}>
+                    {experience.company}
+                  </h1>
+                  <h5 className="text-sm text-secondary font-medium">
+                    {experience.contract}
+                  </h5>
+                </div>
+                <div className="space-y-4">
+                  <h1 className="text-base font-semibold">
+                    {experience.position}
+                  </h1>
+                  <p className="text-sm text-secondary">
+                    {experience.description}
+                  </p>
 
-                <div className="flex flex-wrap gap-2">
-                  {experience.skill.map((item, idx) => (
-                    <span
-                      key={idx}
-                      className="bg-tag-bg border px-4 py-2 rounded-full text-xs text-center font-medium"
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  <div className="flex flex-wrap gap-2">
+                    {experience.skill.map((item, idx) => (
+                      <span
+                        key={idx}
+                        className="bg-tag-bg border px-4 py-2 rounded-full text-xs text-center font-medium"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            </MagicContainer>
           ))}
         </div>
       </div>
