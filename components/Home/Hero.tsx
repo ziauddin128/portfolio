@@ -1,12 +1,13 @@
 import React from "react";
-import { fraunces } from "@/app/layout";
 import { HiArrowLongRight } from "react-icons/hi2";
 import Image from "next/image";
-import { PiReadCvLogo } from "react-icons/pi";
+import { FiDownload } from "react-icons/fi";
+import { fraunces } from "../Shared/Font";
+
 
 export default function Hero() {
   return (
-    <div className="py-10">
+    <div className="py-30 min-h-dvh flex items-center">
       <div className="custom-container">
         <div className="grid md:grid-cols-2 lg:grid-cols-[60%_40%] gap-y-6 gap-x-4 justify-between items-center">
           <div className="space-y-6">
@@ -38,7 +39,7 @@ export default function Hero() {
               </button>
 
               <button className="bg-transparent border border-secondary text-text-primary px-6 py-3 rounded-full text-base font-medium flex items-center gap-2 cursor-pointer hover:border-primary">
-                <PiReadCvLogo className="w-5 h-5" />
+                <FiDownload className="w-5 h-5" />
                 <span>Resume</span>
               </button>
             </div>
