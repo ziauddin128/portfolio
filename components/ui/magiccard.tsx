@@ -32,11 +32,16 @@ const MagicContainer: React.FC<MagicContainerProps> = ({ children, className }) 
         'relative rounded-3xl p-[1px] transition-all duration-300',
         className
       )}
-      style={{
-        background: isHovered
-          ? `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, #9E7AFF, #38bdf8, #FF5C5C, #FE8BBB, transparent 80%)`
-          : 'rgba(255, 255, 255, 0.05)', // Faint border for non-hovered state
-      }}
+          style={{
+            background: isHovered
+              ? `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, 
+                  #1aa3d0, 
+                  #0ea5e9, 
+                  #2563eb, 
+                  #7c3aed, 
+                  transparent 80%)`
+              : 'rgba(255, 255, 255, 0.05)',
+          }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
