@@ -1,4 +1,4 @@
-import Button from "./button"
+import {Button} from "./button"
 import {
   CheckIcon,
   XIcon,
@@ -12,16 +12,16 @@ const OthersButton = () => {
           {/* Navigation Buttons */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button variant="outline" iconLeft={<ArrowLeftIcon />}>
+                <Button variant="outline" >
                     Previous
                 </Button>
-                <Button variant="default" iconRight={<ArrowRightIcon />}>
+                <Button variant="default" >
                     Next
                 </Button>
-                <Button variant="secondary" iconLeft={<ArrowLeftIcon />}>
+                <Button variant="secondary" >
                     Back
                 </Button>
-                <Button variant="ghost" iconRight={<ArrowRightIcon />}>
+                <Button variant="ghost" >
                     Forward
                 </Button>
             </div>
@@ -30,16 +30,16 @@ const OthersButton = () => {
           {/* Status Buttons */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button className="bg-green-500 dark:bg-green-500 dark:text-white dark:hover:bg-green-800" variant="default" iconLeft={<CheckIcon />}>
+                <Button className="bg-green-500 dark:bg-green-500 dark:text-white dark:hover:bg-green-800" variant="default" >
                     Success
                 </Button>
-                <Button variant="destructive" iconLeft={<XIcon />}>
+                <Button variant="destructive" >
                     Delete
                 </Button>
-                <Button variant="outline" iconLeft={<CheckIcon />}>
+                <Button variant="outline">
                     Approve
                 </Button>
-                <Button variant="secondary" iconLeft={<XIcon />} className="bg-red-500"> 
+                <Button variant="secondary"  className="bg-red-500"> 
                     Reject
                 </Button>
             </div>

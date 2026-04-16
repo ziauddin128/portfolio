@@ -1,4 +1,4 @@
-import Button from "./button"
+import {Button} from "./button"
 import {
   ShoppingCartIcon,
   HeartIcon,
@@ -12,16 +12,16 @@ const CommerceButton = () => {
           {/* E-commerce Buttons */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button variant="default" iconLeft={<ShoppingCartIcon />}>
+                <Button variant="default" >
                     Buy Now
                 </Button>
-                <Button variant="outline" iconLeft={<HeartIcon />}>
+                <Button variant="outline" >
                     Save for Later
                 </Button>
-                <Button variant="secondary" iconLeft={<StarIcon />}>
+                <Button variant="secondary" >
                     Write Review
                 </Button>
-                <Button variant="ghost" iconLeft={<ShareIcon />}>
+                <Button variant="ghost">
                     Share Product
                 </Button>
             </div>

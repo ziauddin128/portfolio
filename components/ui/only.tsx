@@ -1,4 +1,4 @@
-import Button from "./button"
+import {Button} from "./button"
 import {
   PlusIcon,
   MinusIcon,
@@ -16,14 +16,14 @@ const OnlyIconButton = () => {
           {/* Icon Only Buttons */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button variant="outline" size="sm" iconLeft={<SearchIcon />} />
-                <Button variant="outline" size="sm" iconLeft={<BellIcon />} />
-                <Button variant="outline" size="sm" iconLeft={<MailIcon />} />
-                <Button variant="outline" size="sm" iconLeft={<PhoneIcon />} />
-                <Button variant="outline" size="sm" iconLeft={<SettingsIcon />} />
-                <Button variant="outline" size="sm" iconLeft={<PlusIcon />} />
-                <Button variant="outline" size="sm" iconLeft={<MinusIcon />} />
-                <Button variant="outline" size="sm" iconLeft={<XIcon />} />
+                <Button variant="outline" size="sm"  />
+                <Button variant="outline" size="sm"  />
+                <Button variant="outline" size="sm"  />
+                <Button variant="outline" size="sm" />
+                <Button variant="outline" size="sm"  />
+                <Button variant="outline" size="sm"  />
+                <Button variant="outline" size="sm"  />
+                <Button variant="outline" size="sm" />
             </div>
           </div>
       </div>

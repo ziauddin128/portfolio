@@ -1,4 +1,4 @@
-import Button from "./button"
+import {Button} from "./button"
 import {
   GoogleIcon,
   GitHubIcon,
@@ -17,31 +17,31 @@ const SocialButton = () => {
           {/* Social Media Login Buttons */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center justify-center gap-4">
-                <Button variant="outline" iconLeft={<EmailIcon />}>
+                <Button variant="outline">
                     Login with Email
                 </Button>
-                <Button variant="outline" iconLeft={<GoogleIcon />}>
+                <Button variant="outline">
                     Continue with Google
                 </Button>
-                <Button variant="outline" iconLeft={<GitHubIcon />}>
+                <Button variant="outline" >
                     Continue with GitHub
                 </Button>
-                <Button variant="outline" iconLeft={<FacebookIcon />}>
+                <Button variant="outline">
                     Login with Facebook
                 </Button>
-                <Button variant="outline" iconLeft={<XIcon2 />}>
+                <Button variant="outline">
                     Login with X
                 </Button>
-                <Button variant="outline" iconLeft={<AppleIcon />}>
+                <Button variant="outline" >
                     Login with Apple
                 </Button>
-                <Button variant="outline" iconLeft={<MicrosoftIcon />}>
+                <Button variant="outline" >
                     Login with Microsoft
                 </Button>
-                <Button variant="outline" iconLeft={<SlackIcon />}>
+                <Button variant="outline" >
                     Login with Slack
                 </Button>
-                <Button variant="outline" iconLeft={<LinkedInIcon />}>
+                <Button variant="outline" >
                     Login with LinkedIn
                 </Button>
             </div>
