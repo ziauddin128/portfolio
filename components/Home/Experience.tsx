@@ -13,22 +13,6 @@ interface Experiences {
 export default function Experience() {
   const experiences: Experiences[] = [
     {
-      company: "Softvence Delta",
-      contract: "Duration · 1 Year 2 Months",
-      position: "Frontend Developer",
-      description:
-        "I worked as a Frontend Developer at Softvence Delta, where I built responsive and interactive user interfaces using React.js, Next.js, and Tailwind CSS. I collaborated with backend teams to integrate RESTful APIs and improve application performance. I also worked on state management and optimized applications using SSR and SEO best practices.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
-    },
-    {
-      company: "Backbencher Studio",
-      contract: "Duration · 7 Months",
-      position: "Jr Frontend Developer",
-      description:
-        "Contributed to building and maintaining frontend features using React.js, Next.js, and Tailwind CSS. Worked on integrating APIs, improving UI responsiveness, and ensuring consistent user experience across devices. Collaborated with the team to enhance performance, code quality, and application scalability.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
-    },
-    {
       company: "Freelance",
       contract: "Self Employed · 2021 - Present",
       position: "Full-stack web developer",
@@ -44,6 +28,22 @@ export default function Experience() {
         "API",
         "Redux Toolkit",
       ],
+    },
+    {
+      company: "Softvence Delta",
+      contract: "Duration · 1 Year 2 Months",
+      position: "Frontend Developer",
+      description:
+        "I worked as a Frontend Developer at Softvence Delta, where I built responsive and interactive user interfaces using React.js, Next.js, and Tailwind CSS. I collaborated with backend teams to integrate RESTful APIs and improve application performance. I also worked on state management and optimized applications using SSR and SEO best practices.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+    },
+    {
+      company: "Backbencher Studio",
+      contract: "Duration · 7 Months",
+      position: "Jr Frontend Developer",
+      description:
+        "Contributed to building and maintaining frontend features using React.js, Next.js, and Tailwind CSS. Worked on integrating APIs, improving UI responsiveness, and ensuring consistent user experience across devices. Collaborated with the team to enhance performance, code quality, and application scalability.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
     },
   ];
 

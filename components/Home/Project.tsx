@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { fraunces } from "../Shared/Font";
 import MagicContainer from "../ui/magiccard";
 import Link from "next/link";
+import Image from 'next/image'
 import { HiMiniArrowLongRight } from "react-icons/hi2";
 
 interface Projects {
@@ -21,7 +23,41 @@ export default function Project() {
       description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
       skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
     },
-  
+    {
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
+      title: "Dopefolio",
+      liveLink:"#",
+      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+    },
+    {
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
+      title: "Dopefolio",
+      liveLink:"#",
+      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+    },
+    {
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
+      title: "Dopefolio",
+      liveLink:"#",
+      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+    },
+    {
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
+      title: "Dopefolio",
+      liveLink:"#",
+      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+    },
+    {
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
+      title: "Dopefolio",
+      liveLink:"#",
+      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+    },
   ];
 
   return (
@@ -39,19 +75,24 @@ export default function Project() {
           </p>
         </div>
 
-        <div className="mt-10 grid sm:grid-cols-2 gap-4">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((data, idx) => (
             <MagicContainer className="rounded-xl">
-              <div
+              <div 
                 key={idx}
-                className="p-5 md:p-8 bg-white rounded-xl border border-gray-200"
+                className="p-5 md:p-6 bg-white rounded-xl border border-gray-200 space-y-3"
               >
-                <div className="space-y-2">
-                  <h1 className={`${fraunces.className} text-lg font-semibold`}>
-                    {data.title}
-                  </h1>
-                </div>
-                <div className="space-y-4">
+
+               <Image src={data.thumbnail}  height={300} width={300}  unoptimized quality={100} loading="eager" className="h-auto max-h-[250px] w-full object-cover rounded-sm" alt={data.title}/> 
+              
+              <div className="space-y-3">
+
+                
+                    <h1 className={`${fraunces.className} text-lg font-semibold`}>
+                    <Link href={data.liveLink} target="_blank" className=" hover:text-primary cursor-pointer"> {data.title}  </Link>
+                    </h1>
+                 
+                  
                   <p className="text-sm text-secondary">
                     {data.description}
                   </p>
@@ -67,15 +108,22 @@ export default function Project() {
                     ))}
                   </div>
 
-                  <Link href="#">
-                  <span>View Live Project</span>
-                  <HiMiniArrowLongRight />
+                  <Link href={data.liveLink} target="_blank" className={`mt-5 ${fraunces.className} flex items-center gap-1 text-sm font-medium hover:text-primary`}>
+                    <span>View Project</span>
+                    <HiMiniArrowLongRight />
                   </Link>
 
                 </div>
               </div>
             </MagicContainer>
           ))}
+        </div>
+
+        <div className="flex items-center justify-center mt-8">
+           <Link href="#" className={`${fraunces.className} text-sm sm:text-base font-semibold flex items-center gap-2`}>
+             <span>See More Project</span> 
+             <HiMiniArrowLongRight />
+           </Link>
         </div>
       </div>
     </div>
