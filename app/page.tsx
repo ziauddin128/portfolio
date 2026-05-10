@@ -4,6 +4,8 @@ import Navbar from "@/components/Shared/Navbar";
 import Experience from "@/components/Home/Experience";
 import TechStack from "@/components/Home/TechStack";
 import Project from "@/components/Home/Project";
+import GetInTouch from "@/components/Home/GetInTouch";
+import Footer from "@/components/Home/Footer";
 
 export default function Home() {
   return (
@@ -11,8 +13,10 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Experience />
-      <TechStack/>
+      <TechStack />
       <Project />
+      <GetInTouch />
+      <Footer />
     </div>
   );
 }

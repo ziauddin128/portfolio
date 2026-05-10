@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React,{useState} from "react";
 import { fraunces } from "../Shared/Font";
 import MagicContainer from "../ui/magiccard";
 import Link from "next/link";
@@ -58,7 +58,17 @@ export default function Project() {
       description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
       skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
     },
+    {
+      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
+      title: "Dopefolio",
+      liveLink:"#",
+      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
+      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+    },
   ];
+  
+  const [length, setLength] = useState(6);
+ 
 
   return (
     <div className="py-10">
@@ -76,17 +86,14 @@ export default function Project() {
         </div>
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projects.map((data, idx) => (
-            <MagicContainer className="rounded-xl">
-              <div 
-                key={idx}
-                className="p-5 md:p-6 bg-white rounded-xl border border-gray-200 space-y-3"
+          {projects.slice(0,length).map((data, idx) => (
+            <MagicContainer key={idx} className="rounded-xl">
+              <div className="p-5 md:p-6 bg-white rounded-xl border border-gray-200 space-y-3"
               >
 
                <Image src={data.thumbnail}  height={300} width={300}  unoptimized quality={100} loading="eager" className="h-auto max-h-[250px] w-full object-cover rounded-sm" alt={data.title}/> 
               
               <div className="space-y-3">
-
                 
                     <h1 className={`${fraunces.className} text-lg font-semibold`}>
                     <Link href={data.liveLink} target="_blank" className=" hover:text-primary cursor-pointer"> {data.title}  </Link>
@@ -119,12 +126,25 @@ export default function Project() {
           ))}
         </div>
 
-        <div className="flex items-center justify-center mt-8">
-           <Link href="#" className={`${fraunces.className} text-sm sm:text-base font-semibold flex items-center gap-2`}>
-             <span>See More Project</span> 
-             <HiMiniArrowLongRight />
-           </Link>
-        </div>
+        {
+          projects.length > 6 &&  (
+                  <div className="flex items-center justify-center mt-8">
+                <button 
+                  onClick={() =>
+                    setLength(length >= projects.length ? 6 : projects.length)
+                  }
+                className={`${fraunces.className} cursor-pointer text-sm sm:text-base font-semibold flex items-center gap-2`}>
+                  <span>
+                  {length >= projects.length
+                  ? "Show Less Project"
+                  : "See More Project"}
+                  </span> 
+                  <HiMiniArrowLongRight />
+                </button>
+              </div>
+          )
+        }
+       
       </div>
     </div>
   );
