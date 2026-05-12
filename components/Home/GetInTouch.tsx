@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { fraunces } from "../Shared/Font";
 import {
   FaBehanceSquare,
@@ -18,6 +18,10 @@ interface SocialLinks {
 }
 
 export default function GetInTouch() {
+  const [loading, setLoading] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [success, setSuccess] = useState("");
+
   const socialLinks: SocialLinks[] = [
     {
       icon: <FaLinkedin className="size-5" />,
@@ -41,6 +45,76 @@ export default function GetInTouch() {
     },
   ];
 
+  // Form Submit
+  const handleForm = async (e) => {
+
+    e.preventDefault();
+
+    setSuccess("");
+
+    const formData = new FormData(e.target);
+
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    let newErrors = {};
+
+    // validation
+    if (!data.name) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!data.email) {
+      newErrors.email = "Email is required";
+    }
+
+    if (!data.subject) {
+      newErrors.subject = "Subject is required";
+    }
+
+    if (!data.message) {
+      newErrors.message = "Message is required";
+    }
+
+    setErrors(newErrors);
+
+    // stop submit if error
+    if (Object.keys(newErrors).length > 0) {
+      return;
+    }
+
+    try {
+      setLoading(true);
+
+      const res = await fetch("/api/nodemailer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setSuccess("Message sent successfully");
+        e.target.reset();
+      } else {
+        alert(result.message);
+      }
+    } catch (error) {
+      console.log(error);
+      alert("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
   return (
     <div className="py-10">
       <div className="custom-container">
@@ -63,7 +137,7 @@ export default function GetInTouch() {
               Send me a message
             </h1>
 
-            <form action="" className="mt-4">
+            <form onSubmit={handleForm} method="POST" className="mt-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium mb-2">Name</label>
@@ -73,7 +147,7 @@ export default function GetInTouch() {
                     name="name"
                     className="w-full p-2 rounded-md border border-gray-300 focus:outline-none"
                   />
-                  <p className="error"></p>
+                  <p className="error">{errors.name}</p>
                 </div>
 
                 <div>
@@ -84,7 +158,7 @@ export default function GetInTouch() {
                     name="email"
                     className="w-full p-2 rounded-md border border-gray-300 focus:outline-none"
                   />
-                  <p className="error"></p>
+                  <p className="error">{errors.email}</p>
                 </div>
 
                 <div className="col-span-2">
@@ -95,7 +169,7 @@ export default function GetInTouch() {
                     name="subject"
                     className="w-full p-2 rounded-md border border-gray-300 focus:outline-none"
                   />
-                  <p className="error"></p>
+                  <p className="error">{errors.subject}</p>
                 </div>
 
                 <div className="col-span-2">
@@ -105,12 +179,20 @@ export default function GetInTouch() {
                     name="message"
                     className="w-full h-20 p-2 rounded-md border border-gray-300 focus:outline-none"
                   ></textarea>
-                  <p className="error"></p>
+                  <p className="error">{errors.message}</p>
                 </div>
               </div>
 
-              <button className="mt-4 bg-text-primary text-white px-6 py-3 rounded-full text-base font-medium flex items-center gap-2 cursor-pointer hover:-translate-y-1 duration-200">
-                <span>Send Message</span>
+              {success && (
+                  <p className="tex-base font-medium text-green-600 mt-3">
+                    {success}
+                  </p>
+                )}
+
+              <button type="submit"  disabled={loading} className="mt-4 bg-text-primary text-white px-6 py-3 rounded-full text-base font-medium flex items-center gap-2 cursor-pointer hover:-translate-y-1 duration-200 disabled:opacity-50">
+                <span>
+                  {loading ? "Sending..." : "Send Message"}
+                </span>
                 <FaLongArrowAltRight />
               </button>
             </form>
@@ -144,7 +226,7 @@ export default function GetInTouch() {
             </div>
 
             <h1 className={`mt-4 ${fraunces.className} text-xl font-semibold`}>
-              Or direct mail at
+              Or direct mail me at
             </h1>
             <Link
               className="mt-2 inline-block text-base sm:text-xl font-medium  text-primary hover:underline"
