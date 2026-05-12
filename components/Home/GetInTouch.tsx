@@ -17,9 +17,16 @@ interface SocialLinks {
   link: string;
 }
 
+type FormErrors = {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+};
+
 export default function GetInTouch() {
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});;
   const [success, setSuccess] = useState("");
 
   const socialLinks: SocialLinks[] = [
@@ -46,13 +53,14 @@ export default function GetInTouch() {
   ];
 
   // Form Submit
-  const handleForm = async (e) => {
+  const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
 
     setSuccess("");
 
-    const formData = new FormData(e.target);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
     const data = {
       name: formData.get("name"),
@@ -61,7 +69,12 @@ export default function GetInTouch() {
       message: formData.get("message"),
     };
 
-    let newErrors = {};
+    let newErrors: {
+      name?: string;
+      email?: string;
+      subject?: string;
+      message?: string;
+    } = {};
 
     // validation
     if (!data.name) {
@@ -102,7 +115,7 @@ export default function GetInTouch() {
 
       if (result.success) {
         setSuccess("Message sent successfully");
-        e.target.reset();
+        form.reset();
       } else {
         alert(result.message);
       }
@@ -116,8 +129,8 @@ export default function GetInTouch() {
 
 
   return (
-    <div className="py-10">
-      <div className="custom-container">
+    <div id="contact">
+      <div className="custom-container py-10 border-t">
         <div className="space-y-4">
           <h2 className="uppercase text-sm text-secondary font-medium">
             Get in Touch

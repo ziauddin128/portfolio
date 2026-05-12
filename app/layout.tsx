@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import { montserrat } from "@/components/Shared/Font";
 
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Zia Uddin Bablu",
   description: "Portfolio of Zia Uddin Bablu",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/images/zia-uddin-bablu.png",
   },
 };
 

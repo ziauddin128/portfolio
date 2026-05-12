@@ -20,15 +20,16 @@ export default function Navbar() {
       id: "#experience",
     },
     {
-      label: "Projects",
-      url: "#",
-      id: "#projects",
-    },
-    {
       label: "Skills",
       url: "#",
       id: "#skills",
     },
+    {
+      label: "Projects",
+      url: "#",
+      id: "#projects",
+    },
+   
   ];
 
   const [showMenu, setShowMenu] = useState(false);
@@ -75,7 +76,7 @@ export default function Navbar() {
               {menus.map((item, idx) => (
                 <li key={idx}>
                   <Link
-                    href={item.url}
+                    href={item.id}
                     className="text-base font-medium text-secondary hover:text-text-primary duration-200"
                   >
                     {item.label}
@@ -84,7 +85,7 @@ export default function Navbar() {
               ))}
             </ul>
             <Link
-              href="#"
+              href="#contact"
               className="bg-text-primary text-white px-5 py-2 rounded-full text-base font-medium hover:-translate-y-1 duration-200"
             >
               Contact

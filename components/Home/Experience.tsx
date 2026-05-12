@@ -48,8 +48,8 @@ export default function Experience() {
   ];
 
   return (
-    <div className="py-10">
-      <div className="custom-container">
+    <div id="experience">
+      <div className="custom-container border-t py-10">
         <div className="space-y-4">
           <h2 className="uppercase text-sm text-secondary font-medium">
             Where I've Worked

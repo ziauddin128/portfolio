@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-export async function POST(req) {
+export async function POST(req:any) {
   try {
     const body = await req.json();
 

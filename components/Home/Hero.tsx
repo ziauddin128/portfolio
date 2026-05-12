@@ -3,11 +3,11 @@ import { HiArrowLongRight } from "react-icons/hi2";
 import Image from "next/image";
 import { FiDownload } from "react-icons/fi";
 import { fraunces } from "../Shared/Font";
-
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="py-30 min-h-dvh flex items-center">
+    <div className="py-30 flex items-center">
       <div className="custom-container">
         <div className="grid md:grid-cols-2 lg:grid-cols-[60%_40%] gap-y-6 gap-x-4 justify-between items-center">
           <div className="space-y-6">
@@ -33,15 +33,15 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-y-4 gap-x-5">
-              <button className="bg-text-primary text-white px-6 py-3 rounded-full text-base font-medium flex items-center gap-2 cursor-pointer hover:-translate-y-1 duration-200">
+              <Link href="#contact" className="bg-text-primary text-white px-6 py-3 rounded-full text-base font-medium flex items-center gap-2 cursor-pointer hover:-translate-y-1 duration-200">
                 <span>Get In Touch</span>
                 <HiArrowLongRight className="w-5 h-5" />
-              </button>
+              </Link>
 
-              <button className="bg-transparent border border-secondary text-text-primary px-6 py-3 rounded-full text-base font-medium flex items-center gap-2 cursor-pointer hover:border-primary">
+              <a href="/cv/zia-uddin-bablu-cv.pdf" download className="bg-transparent border border-secondary text-text-primary px-6 py-3 rounded-full text-base font-medium flex items-center gap-2 cursor-pointer hover:border-primary">
                 <FiDownload className="w-5 h-5" />
                 <span>Resume</span>
-              </button>
+              </a>
             </div>
           </div>
           <div>

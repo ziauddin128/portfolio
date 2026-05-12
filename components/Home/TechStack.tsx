@@ -155,8 +155,8 @@ export default function TechStack() {
   ];
 
   return (
-    <div className="py-10">
-      <div className="custom-container">
+    <div id="skills">
+      <div className="custom-container py-10 border-t">
         <div className="space-y-4">
           <h2 className="uppercase text-sm text-secondary font-medium">
             Expertise

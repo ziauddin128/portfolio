@@ -17,62 +17,54 @@ interface Projects {
 export default function Project() {
   const projects: Projects[] = [
     {
-      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
-      title: "Dopefolio",
-      liveLink:"#",
-      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
+      thumbnail: "/images/projects/odbiolab.jpg",
+      title: "OdBiolab",
+      liveLink:"https://odbiolab.com/",
+      description: "Built ODBiolab, a bilingual peptide education platform using Laravel, PHP, and Bootstrap with responsive UI, calculators, and admin system.",
+      skill: ["PHP", "Laravel", "Bootstrap", "Javascript", "HTML", "CSS"],
+    },
+    {
+      thumbnail: "/images/projects/agencyai.png",
+      title: "Agency.AI",
+      liveLink:"https://agency-ai-one-indol.vercel.app/",
+      description: "A modern and responsive landing page built with Next.js, styled using Tailwind CSS, and enhanced with smooth animations using Framer Motion.",
+      skill: ["Next.js", "React", "Tailwind Css", "Framer Motion"],
+    },
+    {
+      thumbnail: "/images/projects/tytan.png",
+      title: "Tytan Tech",
+      liveLink:"https://www.tytantech.com/",
+      description: "Modern agency website built with Next.js and Tailwind CSS, featuring responsive design, fast performance, and professional business presentation.",
+      skill: ["Next.js", "React", "Tailwind Css", "Node Js", "Express Js"],
+    },
+    {
+      thumbnail: "/images/projects/sanivast.jpg",
+      title: "Sanivast",
+      liveLink:"https://sanivast.com/",
+      description: "Professional restoration business website offering sanitation, commercial cleaning, tile repair, and re-grouting services with modern responsive design.",
+      skill: ["PHP", "Laravel", "Bootstrap", "Javascript", "HTML", "CSS"],
+    },
+    {
+      thumbnail: "/images/projects/christopher.jpg",
+      title: "Christopher",
+      liveLink:"https://christopherr808-frontend.vercel.app/",
+      description: "Modern fitness platform for gym training management, coach services, and fitness equipment selling with responsive and user-friendly design.",
       skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
     },
     {
-      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
-      title: "Dopefolio",
-      liveLink:"#",
-      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
-    },
-    {
-      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
-      title: "Dopefolio",
-      liveLink:"#",
-      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
-    },
-    {
-      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
-      title: "Dopefolio",
-      liveLink:"#",
-      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
-    },
-    {
-      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
-      title: "Dopefolio",
-      liveLink:"#",
-      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
-    },
-    {
-      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
-      title: "Dopefolio",
-      liveLink:"#",
-      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
-    },
-    {
-      thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUT2jLYoIC9Lg65AVA5KhEUdJdWFm0-vznZg&s",
-      title: "Dopefolio",
-      liveLink:"#",
-      description: "A successful Open-Source portfolio template featured on CSS-Tricks, Hostinger, and used by thousands of developers globally.",
-      skill: ["Next.js", "React", "Tailwind Css", "API", "Redux Toolkit"],
+      thumbnail: "/images/projects/haquebajar.jpg",
+      title: "Hoque Bazar",
+      liveLink:"https://www.hoquebazar.com/",
+      description: "Laravel-based grocery ecommerce platform featuring product management, online ordering, responsive design, and seamless shopping experience for customers.",
+      skill: ["Laravel", "Bootstrap", "MySql"],
     },
   ];
   
   const [length, setLength] = useState(6);
- 
 
   return (
-    <div className="py-10">
-      <div className="custom-container">
+    <div id="projects">
+      <div className="custom-container border-t py-10">
         <div className="space-y-4">
           <h2 className="uppercase text-sm text-secondary font-medium">
           Hand-Coded Work
@@ -87,11 +79,11 @@ export default function Project() {
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.slice(0,length).map((data, idx) => (
-            <MagicContainer key={idx} className="rounded-xl">
-              <div className="p-5 md:p-6 bg-white rounded-xl border border-gray-200 space-y-3"
+            <MagicContainer key={idx} className="rounded-xl ">
+              <div className="p-5 md:p-6 bg-white rounded-xl h-full border border-gray-200 space-y-3"
               >
 
-               <Image src={data.thumbnail}  height={300} width={300}  unoptimized quality={100} loading="eager" className="h-auto max-h-[250px] w-full object-cover rounded-sm" alt={data.title}/> 
+               <Image src={data.thumbnail}  height={300} width={300}  unoptimized quality={100} loading="eager" className="h-[250px] w-full object-cover rounded-sm" alt={data.title}/> 
               
               <div className="space-y-3">
                 
